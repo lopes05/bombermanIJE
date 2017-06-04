@@ -7,7 +7,8 @@ int main(int argc, char* argv[]){
 
 	Uint32 frameStart, frameTime;
 
-	Game::Instance().init("Chapter 1", 100, 100, 640, 480, false);
+	Game::Instance().init("Bomberman Copia", SDL_WINDOWPOS_CENTERED,
+				SDL_WINDOWPOS_CENTERED, 1024, 768, false);
 
 	while(Game::Instance().running()){
 		frameStart = SDL_GetTicks();

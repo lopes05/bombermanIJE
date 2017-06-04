@@ -4,10 +4,10 @@
 #include "SDLGameObject.h"
 #include "LoaderParams.h"
 #include "BaseCreator.h"
-#include "SkillManager.h"
 #include "Timer.h"
 #include <vector>
 #include <string>
+#include "Bomb.h"
 #include <SDL2/SDL.h>
 
 class Player : public SDLGameObject{
@@ -25,6 +25,7 @@ private:
 	bool isFirstSkill = true;
 	void move();
 	void useSkill();
+	BombCreator bCreator;
 };
 
 class PlayerCreator : public BaseCreator{

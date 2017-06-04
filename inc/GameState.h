@@ -29,6 +29,11 @@ public:
 			m_gameObjects.erase(position);
 		}
 	}
+
+	GameObject* getTail(){
+		return m_gameObjects.back();
+	}
+
 	bool can_update = true;
 protected:
 	std::vector<GameObject*> m_gameObjects;

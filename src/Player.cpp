@@ -3,7 +3,7 @@
 #include "LoaderParams.h"
 #include "InputHandler.h"
 #include "Game.h"
-
+#include "Physics.h"
 #include <string>
 #include <SDL2/SDL.h>
 #include <iostream>
@@ -13,6 +13,9 @@ using namespace std;
 
 Player::Player() : SDLGameObject(){
 	//TextureManager::Instance().load("assets/clash2.png", "bullet", Game::Instance().getRenderer());
+	TextureManager::Instance().load("assets/bombas.png", "bomba", Game::Instance().getRenderer());
+	TextureManager::Instance().load("assets/explosion.png", "exp", Game::Instance().getRenderer());
+
 }
 
 void Player::load(const LoaderParams* pParams){
@@ -24,7 +27,7 @@ void Player::draw(){
 }
 
 void Player::update(){
-	m_currentFrame = int(((SDL_GetTicks() / 300) % 6));
+	m_currentFrame = int(((SDL_GetTicks() / 300) % m_numFrames));
 
 
 	handleInput();
@@ -42,7 +45,7 @@ void Player::clean(){
 
 void Player::handleInput(){
 	move();
-
+	useSkill();
 	
 }
 
@@ -74,7 +77,11 @@ void Player::move(){
 
 void Player::useSkill(){
 	
-	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_X, 100)){
-		
+	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_X, 1000)){
+		Bomb *bomb = bCreator.create();
+		bomb->load(new LoaderParams(m_position.getX() + 5, m_position.getY() + 5, 21, 25, "bomba",
+			10));
+		Game::Instance().getStateMachine()->currentState()->addGameObject(bomb);
+		cout << "Bomba criada" << endl;
 	}
 }
