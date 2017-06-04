@@ -6,8 +6,6 @@
 #include "BaseCreator.h"
 #include "SkillManager.h"
 #include "Timer.h"
-#include "Bullet.h"
-
 #include <vector>
 #include <string>
 #include <SDL2/SDL.h>
@@ -24,17 +22,9 @@ public:
 	uint8_t* pixelColors;
 private:
 	void handleInput();
-	SkillManager m_skillManager;
-	std::pair<default_inks, default_inks> m_pSkills;
 	bool isFirstSkill = true;
 	void move();
-	void rotateTowards();
-	void dash();
 	void useSkill();
-	bool m_isDashing;
-	Uint32 m_dashTime;
-	int fire_rate;
-	BulletCreator bulletCreator;
 };
 
 class PlayerCreator : public BaseCreator{
