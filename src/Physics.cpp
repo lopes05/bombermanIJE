@@ -23,3 +23,8 @@ bool Physics::checkCollision(SDLGameObject* p1, SDLGameObject* p2){
 
 	return true;
 }
+
+Vector2D Physics::getNormal(SDLGameObject* p1, SDLGameObject* p2){
+	Vector2D res = p1->getPosition() - p2->getPosition();
+	return res.norm();
+}

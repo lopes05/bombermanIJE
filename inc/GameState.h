@@ -34,9 +34,14 @@ public:
 		return m_gameObjects.back();
 	}
 
+	std::vector<GameObject*> getGameObjs(){
+		return m_gameObjects;
+	}
+
 	bool can_update = true;
 protected:
 	std::vector<GameObject*> m_gameObjects;
+	std::vector<GameObject*> m_tiles;
 	std::vector<std::string> m_textureIDList;
 	
 };

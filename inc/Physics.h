@@ -2,6 +2,7 @@
 #define PHYSICS_H
 
 #include "SDLGameObject.h"
+#include "Vector2D.h"
 
 class Physics{
 	public:
@@ -15,6 +16,7 @@ class Physics{
 		void operator=(Physics const&) = delete;
 
 		bool checkCollision(SDLGameObject* p1, SDLGameObject* p2);
+		Vector2D getNormal(SDLGameObject* p1, SDLGameObject* p2);
 
 	private:
 		Physics(){}

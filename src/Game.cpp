@@ -10,7 +10,7 @@
 #include "GameObjectFactory.h"
 #include "AnimatedGraphic.h"
 #include "Timer.h"
-
+#include "ColliderWall.h"
 #include <iostream>
 #include <vector>
 #include <SDL2/SDL_image.h>
@@ -72,7 +72,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	GameObjectFactory::Instance().registerType("Player", new PlayerCreator());
 	GameObjectFactory::Instance().registerType("Enemy", new EnemyCreator());
 	GameObjectFactory::Instance().registerType("AnimatedGraphic", new AnimatedGraphicCreator());
-
+	GameObjectFactory::Instance().registerType("ColliderWall", new ColliderWallCreator());
 
 	m_pGameStateMachine = new GameStateMachine();
 	m_pGameStateMachine->changeState(new MainMenuState());

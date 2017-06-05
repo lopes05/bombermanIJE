@@ -120,6 +120,7 @@ void LevelParser::parseTileLayer(TiXmlElement* pTileElement, std::vector<Layer*>
 	for(int rows = 0; rows < m_height; rows++){
 		for(int cols = 0; cols < m_width; cols++){
 			data[rows][cols] = gids[rows * m_width + cols];
+
 		}
 	}
 
@@ -164,10 +165,11 @@ void LevelParser::parseObjectLayer(TiXmlElement* pObjectElement, std::vector<Lay
 						}
 					}
 				}
-				
+			
 			pGameObject->load(new
 			LoaderParams(x, y, width, height, textureID, numFrames, callbackID, animSpeed));
 			pObjectLayer->getGameObjects()->push_back(pGameObject);
+		
 		}
 	}
 	pLayers->push_back(pObjectLayer);

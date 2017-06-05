@@ -15,7 +15,7 @@ Player::Player() : SDLGameObject(){
 	//TextureManager::Instance().load("assets/clash2.png", "bullet", Game::Instance().getRenderer());
 	TextureManager::Instance().load("assets/bombas.png", "bomba", Game::Instance().getRenderer());
 	TextureManager::Instance().load("assets/explosion.png", "exp", Game::Instance().getRenderer());
-
+	//Game::Instance().addGameObject(this);
 }
 
 void Player::load(const LoaderParams* pParams){
@@ -72,7 +72,17 @@ void Player::move(){
 	movement = movement.norm();
 
 	m_velocity = movement;
+	
+	for(auto &x: Game::Instance().getGameObjs())
+		if(Physics::Instance().checkCollision(dynamic_cast<SDLGameObject*>(this),
+			dynamic_cast<SDLGameObject*>(x))){
+			m_velocity = Physics::Instance().getNormal(dynamic_cast<SDLGameObject*>(this),
+					dynamic_cast<SDLGameObject*>(x));
+		}
+
+	m_velocity = m_velocity.norm();
 	m_position += m_velocity;
+
 }
 
 void Player::useSkill(){

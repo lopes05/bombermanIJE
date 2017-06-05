@@ -9,6 +9,7 @@ using namespace std;
 Bomb::Bomb(){
 	time_to_live = 150;
 	bornTime = Timer::Instance().step();
+	//Game::Instance().addGameObject(this);
 }
 
 void Bomb::load(const LoaderParams *pParams){
@@ -26,6 +27,7 @@ void Bomb::update(){
 
 		if(Timer::Instance().step() >= bornTime + time_to_live){
 			Vector2D aux = m_position;
+			
 			Game::Instance().getStateMachine()->currentState()->removeGameObject(this);
 			
 			cout << "Bomba explodiu" << endl;

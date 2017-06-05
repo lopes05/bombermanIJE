@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="2017.05.02" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="32" tileheight="32" nextobjectid="2">
+<map version="2017.05.02" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="32" tileheight="32" nextobjectid="6">
  <properties>
   <property name="helicopter" value="assets/bomberman.png"/>
  </properties>
@@ -12,7 +12,39 @@
   </data>
  </layer>
  <objectgroup name="Object Layer 1">
-  <object id="1" name="Helicopter1" type="Player" x="34" y="33" width="29" height="27">
+  <object id="1" name="wall1" type="ColliderWall" x="0" y="0" width="29" height="754">
+   <properties>
+    <property name="numFrames" value="12"/>
+    <property name="textureHeight" value="36"/>
+    <property name="textureID" value="helicopter"/>
+    <property name="textureWidth" value="20"/>
+   </properties>
+  </object>
+  <object id="2" name="Helicopter1" type="Player" x="34" y="34" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="12"/>
+    <property name="textureHeight" value="36"/>
+    <property name="textureID" value="helicopter"/>
+    <property name="textureWidth" value="20"/>
+   </properties>
+  </object>
+  <object id="3" name="wall2" type="ColliderWall" x="32" y="736" width="990" height="30">
+   <properties>
+    <property name="numFrames" value="12"/>
+    <property name="textureHeight" value="36"/>
+    <property name="textureID" value="helicopter"/>
+    <property name="textureWidth" value="20"/>
+   </properties>
+  </object>
+  <object id="4" name="wall3" type="ColliderWall" x="993" y="33" width="66" height="701">
+   <properties>
+    <property name="numFrames" value="12"/>
+    <property name="textureHeight" value="36"/>
+    <property name="textureID" value="helicopter"/>
+    <property name="textureWidth" value="20"/>
+   </properties>
+  </object>
+  <object id="5" name="wall4" type="ColliderWall" x="30" y="-2" width="962" height="32">
    <properties>
     <property name="numFrames" value="12"/>
     <property name="textureHeight" value="36"/>

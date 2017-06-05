@@ -4,7 +4,7 @@
 #include "TextureManager.h"
 #include "GameObject.h"
 #include "GameStateMachine.h"
-
+#include "SDLGameObject.h"
 #include <SDL2/SDL.h>
 #include <vector>
 
@@ -46,6 +46,14 @@ public:
 		return m_gameHeight;
 	}
 
+	void addGameObject(SDLGameObject *obj){
+		m_gameObjects.push_back(obj);
+	}
+
+	std::vector<SDLGameObject*> getGameObjs(){
+		return m_gameObjects;
+	}
+
 private:
 	Game() {}
 
@@ -59,7 +67,7 @@ private:
 	GameObject* m_player;
 	GameObject* m_enemy;
 
-	std::vector<GameObject*> m_gameObjects;
+	std::vector<SDLGameObject*> m_gameObjects;
 
 	int m_currentFrame;
 	bool m_bRunning;
