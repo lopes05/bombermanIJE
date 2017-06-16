@@ -5,7 +5,7 @@
 
 class Explosion : public SDLGameObject{
 public:
-	Explosion();
+	Explosion(int x, int y);
 	~Explosion() {}
 	void load(const LoaderParams* pParams);
 	void draw();
@@ -22,8 +22,8 @@ private:
 
 class ExplosionCreator{
 public:
-	Explosion *create(){
-		return new Explosion();
+	Explosion *create(int x, int y){
+		return new Explosion(x, y);
 	}
 };
 

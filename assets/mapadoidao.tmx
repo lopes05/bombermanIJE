@@ -12,12 +12,12 @@
   </data>
  </layer>
  <objectgroup name="Object Layer 1">
-  <object id="1" name="wall1" type="ColliderWall" x="0" y="0" width="29" height="754">
+  <object id="1" name="wall1" type="ColliderWall" x="0" y="0" width="29" height="775">
    <properties>
-    <property name="numFrames" value="12"/>
-    <property name="textureHeight" value="36"/>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="775"/>
     <property name="textureID" value="helicopter"/>
-    <property name="textureWidth" value="20"/>
+    <property name="textureWidth" value="26"/>
    </properties>
   </object>
   <object id="2" name="Helicopter1" type="Player" x="34" y="34" width="29" height="27">
@@ -31,25 +31,25 @@
   <object id="3" name="wall2" type="ColliderWall" x="32" y="736" width="990" height="30">
    <properties>
     <property name="numFrames" value="12"/>
-    <property name="textureHeight" value="36"/>
+    <property name="textureHeight" value="28"/>
     <property name="textureID" value="helicopter"/>
-    <property name="textureWidth" value="20"/>
+    <property name="textureWidth" value="990"/>
    </properties>
   </object>
   <object id="4" name="wall3" type="ColliderWall" x="993" y="33" width="66" height="701">
    <properties>
     <property name="numFrames" value="12"/>
-    <property name="textureHeight" value="36"/>
+    <property name="textureHeight" value="701"/>
     <property name="textureID" value="helicopter"/>
-    <property name="textureWidth" value="20"/>
+    <property name="textureWidth" value="65"/>
    </properties>
   </object>
   <object id="5" name="wall4" type="ColliderWall" x="30" y="-2" width="962" height="32">
    <properties>
     <property name="numFrames" value="12"/>
-    <property name="textureHeight" value="36"/>
+    <property name="textureHeight" value="30"/>
     <property name="textureID" value="helicopter"/>
-    <property name="textureWidth" value="20"/>
+    <property name="textureWidth" value="962"/>
    </properties>
   </object>
  </objectgroup>

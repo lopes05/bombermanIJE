@@ -16,6 +16,7 @@ Player::Player() : SDLGameObject(){
 	TextureManager::Instance().load("assets/bombas.png", "bomba", Game::Instance().getRenderer());
 	TextureManager::Instance().load("assets/explosion.png", "exp", Game::Instance().getRenderer());
 	//Game::Instance().addGameObject(this);
+	Game::Instance().setPlayer(this);
 }
 
 void Player::load(const LoaderParams* pParams){

@@ -7,6 +7,7 @@
 #include "SDLGameObject.h"
 #include <SDL2/SDL.h>
 #include <vector>
+#include "Player.h"
 
 class Game{
 public:
@@ -54,6 +55,15 @@ public:
 		return m_gameObjects;
 	}
 
+	void setPlayer(Player* player){
+		this->player = player;
+	}
+
+	Player* getPlayer(){
+		return this->player;
+	}
+
+
 private:
 	Game() {}
 
@@ -64,7 +74,7 @@ private:
 	SDL_Renderer* m_pRenderer;
 
 	GameObject* m_go;
-	GameObject* m_player;
+	Player* player;
 	GameObject* m_enemy;
 
 	std::vector<SDLGameObject*> m_gameObjects;

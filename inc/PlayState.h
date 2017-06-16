@@ -17,10 +17,8 @@ public:
 		return s_playID;
 	}
 
-
 private:
 	static const std::string s_playID;
-
 	bool checkCollision(SDLGameObject *p1, SDLGameObject *p2);
 };
 
