@@ -1,21 +1,23 @@
-#ifndef COLLIDER_WALL_H
-#define COLLIDER_WALL_H
+#ifndef DESTRUCTIBLE_WALL_H
+#define DESTRUCTIBLE_WALL_H
 
-#include "SDLGameObject.h"
+#include "ColliderWall.h"
 #include "BaseCreator.h"
-#include "Game.h"
 
-class ColliderWall : public SDLGameObject{
+class DestructibleWall : public ColliderWall{
+
 public:
-	ColliderWall();
+	DestructibleWall();
 
 	virtual void clean();
 	virtual void load(const LoaderParams* pParams);
 	virtual void update();
 	virtual void draw();
+
 };
 
-class ColliderWallCreator : public BaseCreator{
+
+class DestructibleWallCreator : public BaseCreator{
 	GameObject* createGameObject() const{
 		ColliderWall* wall = new ColliderWall();
 

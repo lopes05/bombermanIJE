@@ -48,6 +48,15 @@ void Explosion::update(){
 		Game::Instance().getStateMachine()->changeState(new GameOverState());
 	}
 
+	for(auto &x: Game::Instance().getGameObjs())
+		if(Physics::Instance().checkWallCollision(dynamic_cast<SDLGameObject*>(this),
+			dynamic_cast<SDLGameObject*>(x))){
+			Game::Instance().getStateMachine()->currentState()->removeGameObject(this);
+		}
+
+	
+
+
 
 }
 

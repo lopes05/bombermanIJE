@@ -73,6 +73,25 @@ public:
 		return this->player2;
 	}
 
+	void addDestructibleWall(SDLGameObject *obj){
+		m_destructibleWalls.push_back(obj);
+	}
+
+	void removeDestructibleWall(SDLGameObject* wall){
+		std::vector<SDLGameObject*>::iterator position =  std::find(
+															m_destructibleWalls.begin(),
+															m_destructibleWalls.end(),
+			 												wall);
+		if(position != m_destructibleWalls.end()){
+			m_destructibleWalls.erase(position);
+		}
+	}
+
+	std::vector<SDLGameObject*> getDestructibleWalls(){
+		return m_destructibleWalls;
+	}
+
+
 private:
 	Game() {}
 
@@ -88,6 +107,7 @@ private:
 	GameObject* m_enemy;
 
 	std::vector<SDLGameObject*> m_gameObjects;
+	std::vector<SDLGameObject*> m_destructibleWalls;
 
 	int m_currentFrame;
 	bool m_bRunning;
