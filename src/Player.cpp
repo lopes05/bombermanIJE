@@ -56,20 +56,20 @@ void Player::move(){
 	Vector2D movement(0, 0);
 
 	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_W)){
-		movement += Vector2D(0, -1);
+		movement += Vector2D(0, -1.5);
 	}
 
 	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_S)){
-		movement += Vector2D(0, +1);
+		movement += Vector2D(0, +1.5);
 	}
 
 	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_D)){
-		movement += Vector2D(1, 0);
+		movement += Vector2D(1.5, 0);
 	}
 
 
 	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_A)){
-		movement += Vector2D(-1, 0);
+		movement += Vector2D(-1.5, 0);
 	}
 
 	if(movement.getY() == 0){

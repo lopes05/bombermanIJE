@@ -45,20 +45,20 @@ void Enemy::move(){
 		Vector2D movement(0, 0);
 
 	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_UP)){
-		movement += Vector2D(0, -1);
+		movement += Vector2D(0, -1.5);
 	}
 
 	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_DOWN)){
-		movement += Vector2D(0, +1);
+		movement += Vector2D(0, +1.5);
 	}
 
 	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_RIGHT)){
-		movement += Vector2D(1, 0);
+		movement += Vector2D(1.5, 0);
 	}
 
 
 	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_LEFT)){
-		movement += Vector2D(-1, 0);
+		movement += Vector2D(-1.5, 0);
 	}
 
 	if(movement.getY() == 0){
