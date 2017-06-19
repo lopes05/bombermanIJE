@@ -15,6 +15,8 @@ Player::Player() : SDLGameObject(){
 	//TextureManager::Instance().load("assets/clash2.png", "bullet", Game::Instance().getRenderer());
 	TextureManager::Instance().load("assets/bombas.png", "bomba", Game::Instance().getRenderer());
 	TextureManager::Instance().load("assets/explosion.png", "exp", Game::Instance().getRenderer());
+	TextureManager::Instance().load("assets/bombermanup.png", "bup", Game::Instance().getRenderer());
+	TextureManager::Instance().load("assets/bombermanside.png", "bside", Game::Instance().getRenderer());
 	//Game::Instance().addGameObject(this);
 	Game::Instance().setPlayer(this);
 }
@@ -68,6 +70,26 @@ void Player::move(){
 
 	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_A)){
 		movement += Vector2D(-1, 0);
+	}
+
+	if(movement.getY() == 0){
+		if(movement.getX() > 0){
+			m_textureID = "bside";
+		}
+		else if(movement.getX()< 0){
+			m_textureID = "bside";
+		}
+		else{
+			m_textureID = "helicopter";
+		}
+	}
+	else{
+		if(movement.getY() > 0){
+			m_textureID = "helicopter";
+		}
+		else{
+			m_textureID = "bup";
+		}
 	}
 
 	movement = movement.norm();
