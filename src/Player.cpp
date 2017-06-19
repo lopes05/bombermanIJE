@@ -97,7 +97,7 @@ void Player::move(){
 	m_velocity = movement;
 	
 	for(auto &x: Game::Instance().getGameObjs())
-		if(Physics::Instance().checkCollision(dynamic_cast<SDLGameObject*>(this),
+		if(Physics::Instance().checkWallCollision(dynamic_cast<SDLGameObject*>(this),
 			dynamic_cast<SDLGameObject*>(x))){
 			m_velocity = Physics::Instance().getNormal(dynamic_cast<SDLGameObject*>(this),
 					dynamic_cast<SDLGameObject*>(x));

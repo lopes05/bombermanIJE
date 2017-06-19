@@ -38,9 +38,16 @@ void Explosion::update(){
 
 	if(Physics::Instance().checkCollision(dynamic_cast<SDLGameObject*>(this), 
 		dynamic_cast<SDLGameObject*>(Game::Instance().getPlayer()))){
-		cout << "GG" << endl;
+		cout << "GG! PLAYER 2 WINS" << endl;
 		Game::Instance().getStateMachine()->changeState(new GameOverState());
 	}
+
+	if(Physics::Instance().checkCollision(dynamic_cast<SDLGameObject*>(this), 
+		dynamic_cast<SDLGameObject*>(Game::Instance().getPlayer2()))){
+		cout << "GG! PLAYER 1 WINS" << endl;
+		Game::Instance().getStateMachine()->changeState(new GameOverState());
+	}
+
 
 }
 

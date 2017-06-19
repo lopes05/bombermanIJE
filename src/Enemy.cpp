@@ -1,8 +1,10 @@
 #include "Enemy.h"
 #include "InputHandler.h"
-
+#include "Game.h"
+#include "Bomb.h"
 #include <iostream>
 #include <string>
+#include "Physics.h"
 
 using namespace std;
 
@@ -10,7 +12,7 @@ Enemy::Enemy() : SDLGameObject(){
 	m_totalHealth = 1000;
 	m_actualHealth = m_totalHealth;
 	m_state = FULL;
-	
+	Game::Instance().setPlayer2(this);
 }
 
 void Enemy::load(const LoaderParams* pParams){
@@ -19,12 +21,16 @@ void Enemy::load(const LoaderParams* pParams){
 	}
 
 void Enemy::update(){
-	m_currentFrame = int(((SDL_GetTicks() / 100) % 5));
+	m_currentFrame = int(((SDL_GetTicks() / 300) % m_numFrames));
+	move();
+	useSkill();
 
-	updateHealth();
-	changeAttack();
+	if(m_velocity == Vector2D(0, 0)){
+		m_currentFrame = 0;
+	}
 
 	SDLGameObject::update();
+
 }
 
 void Enemy::clean(){
@@ -35,48 +41,70 @@ void Enemy::draw(){
 	SDLGameObject::draw();
 }
 
-void Enemy::updateHealth(){
+void Enemy::move(){
+		Vector2D movement(0, 0);
 
-	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_Z)){
-		m_actualHealth -= 20;
+	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_UP)){
+		movement += Vector2D(0, -1);
 	}
 
-	changeState();
+	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_DOWN)){
+		movement += Vector2D(0, +1);
+	}
+
+	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_RIGHT)){
+		movement += Vector2D(1, 0);
+	}
+
+
+	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_LEFT)){
+		movement += Vector2D(-1, 0);
+	}
+
+	if(movement.getY() == 0){
+		if(movement.getX() > 0){
+			m_textureID = "bside";
+		}
+		else if(movement.getX()< 0){
+			m_textureID = "bside";
+		}
+		else{
+			m_textureID = "helicopter";
+		}
+	}
+	else{
+		if(movement.getY() > 0){
+			m_textureID = "helicopter";
+		}
+		else{
+			m_textureID = "bup";
+		}
+	}
+
+	movement = movement.norm();
+
+	m_velocity = movement;
+	
+	for(auto &x: Game::Instance().getGameObjs())
+		if(Physics::Instance().checkWallCollision(dynamic_cast<SDLGameObject*>(this),
+			dynamic_cast<SDLGameObject*>(x))){
+			m_velocity = Physics::Instance().getNormal(dynamic_cast<SDLGameObject*>(this),
+					dynamic_cast<SDLGameObject*>(x));
+		}
+
+	m_velocity = m_velocity.norm();
+	m_position += m_velocity;
+
 }
 
-void Enemy::changeAttack(){
 
-	switch(m_state){
-		case FULL:
-			//cout << "TO FULL VIDA MANE" << endl;
-		break;
-
-		case MEDIUM:
-			//cout << "TA ME DEIXANDO PISTOLA" << endl;
-		break;
-
-		case LOW:
-			//cout << "Ta fudido!" << endl;
-		break;
-
-		case DEAD:
-			//cout << "RIP BOSS" << endl;
-		break;
-	}
-
-}
-
-void Enemy::changeState(){
-	int halfHealth = m_totalHealth / 2;
-	int quarterHealth = m_totalHealth / 4;
-
-	if(m_actualHealth <= halfHealth and m_actualHealth > quarterHealth){
-		m_state = MEDIUM;
-	}
-	else if(m_actualHealth <= quarterHealth and m_actualHealth > 0){
-		m_state = LOW;
-	}
-	else if(m_actualHealth <= 0){
-		m_state = DEAD;
+void Enemy::useSkill(){
+	
+	if(InputHandler::Instance().isKeyDown(SDL_SCANCODE_L, 1000)){
+		Bomb *bomb = bCreator.create();
+		bomb->load(new LoaderParams(m_position.getX() + 5, m_position.getY() + 5, 21, 25, "bomba",
+			10));
+		Game::Instance().getStateMachine()->currentState()->addGameObject(bomb);
+		cout << "Bomba criada" << endl;
 	}
 }

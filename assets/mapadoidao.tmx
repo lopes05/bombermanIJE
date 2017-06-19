@@ -1,55 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="2017.05.02" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="32" tileheight="32" nextobjectid="6">
+<map version="2017.05.02" orientation="orthogonal" renderorder="right-down" width="18" height="16" tilewidth="32" tileheight="32" nextobjectid="52">
  <properties>
   <property name="helicopter" value="assets/bomberman.png"/>
+  <property name="wall" value="assets/wall.png"/>
  </properties>
  <tileset firstgid="1" name="tibiasheet" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="256" columns="16">
   <image source="tibiasheet.png" width="544" height="544"/>
  </tileset>
- <layer name="Tile Layer 1" width="32" height="24">
+ <layer name="Tile Layer 1" width="18" height="16">
   <data encoding="base64" compression="zlib">
-   eJztzbENAAAMwjD4/+l+URZHyuwm6fhVfD6fz+fz+Xz+t73+AJV+AG4=
+   eJwTZGBgEKQSphTQ0pyPWNShi6Hzh4K/qGXOaPjQx5zhFM7UwAAf6wy6
   </data>
  </layer>
  <objectgroup name="Object Layer 1">
-  <object id="1" name="wall1" type="ColliderWall" x="0" y="0" width="29" height="775">
+  <object id="1" name="wall1" type="ColliderWall" x="0" y="0" width="32" height="512">
    <properties>
     <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="775"/>
+    <property name="textureHeight" value="512"/>
     <property name="textureID" value="helicopter"/>
-    <property name="textureWidth" value="26"/>
+    <property name="textureWidth" value="32"/>
    </properties>
   </object>
-  <object id="2" name="Helicopter1" type="Player" x="34" y="34" width="29" height="27">
+  <object id="2" name="player1" type="Player" x="34" y="34" width="29" height="27">
    <properties>
-    <property name="numFrames" value="12"/>
+    <property name="numFrames" value="3"/>
     <property name="textureHeight" value="36"/>
     <property name="textureID" value="helicopter"/>
-    <property name="textureWidth" value="20"/>
+    <property name="textureWidth" value="20.333"/>
    </properties>
   </object>
-  <object id="3" name="wall2" type="ColliderWall" x="32" y="736" width="990" height="30">
-   <properties>
-    <property name="numFrames" value="12"/>
-    <property name="textureHeight" value="28"/>
-    <property name="textureID" value="helicopter"/>
-    <property name="textureWidth" value="990"/>
-   </properties>
-  </object>
-  <object id="4" name="wall3" type="ColliderWall" x="993" y="33" width="66" height="701">
-   <properties>
-    <property name="numFrames" value="12"/>
-    <property name="textureHeight" value="701"/>
-    <property name="textureID" value="helicopter"/>
-    <property name="textureWidth" value="65"/>
-   </properties>
-  </object>
-  <object id="5" name="wall4" type="ColliderWall" x="30" y="-2" width="962" height="32">
+  <object id="5" name="wall2" type="ColliderWall" x="30" y="0" width="545" height="32">
    <properties>
     <property name="numFrames" value="12"/>
     <property name="textureHeight" value="30"/>
     <property name="textureID" value="helicopter"/>
-    <property name="textureWidth" value="962"/>
+    <property name="textureWidth" value="545"/>
+   </properties>
+  </object>
+  <object id="6" name="wall3" type="ColliderWall" x="35.5" y="479" width="542" height="32">
+   <properties>
+    <property name="numFrames" value="12"/>
+    <property name="textureHeight" value="30"/>
+    <property name="textureID" value="helicopter"/>
+    <property name="textureWidth" value="542"/>
+   </properties>
+  </object>
+  <object id="7" name="wall1" type="ColliderWall" x="545" y="31" width="32" height="449">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="449"/>
+    <property name="textureID" value="helicopter"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="8" name="obstacle1" type="ColliderWall" x="127.5" y="96.5" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="3"/>
+    <property name="textureHeight" value="36"/>
+    <property name="textureID" value="helicopter"/>
+    <property name="textureWidth" value="20.333"/>
+   </properties>
+  </object>
+  <object id="41" name="obstacle1" type="ColliderWall" x="128.5" y="226.5" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="3"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="44" name="obstacle1" type="ColliderWall" x="129.5" y="386.5" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="45" name="player2" type="Enemy" x="479.5" y="416.5" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="3"/>
+    <property name="textureHeight" value="36"/>
+    <property name="textureID" value="helicopter"/>
+    <property name="textureWidth" value="20.333"/>
+   </properties>
+  </object>
+  <object id="46" name="obstacle1" type="ColliderWall" x="289.5" y="226.5" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="3"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="47" name="obstacle1" type="ColliderWall" x="287.5" y="97.5" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="3"/>
+    <property name="textureHeight" value="36"/>
+    <property name="textureID" value="helicopter"/>
+    <property name="textureWidth" value="20.333"/>
+   </properties>
+  </object>
+  <object id="48" name="obstacle1" type="ColliderWall" x="416.5" y="96.5" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="3"/>
+    <property name="textureHeight" value="36"/>
+    <property name="textureID" value="helicopter"/>
+    <property name="textureWidth" value="20.333"/>
+   </properties>
+  </object>
+  <object id="49" name="obstacle1" type="ColliderWall" x="417.5" y="226.5" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="3"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="50" name="obstacle1" type="ColliderWall" x="418.5" y="385.5" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="51" name="obstacle1" type="ColliderWall" x="289.5" y="385.5" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="3"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
    </properties>
   </object>
  </objectgroup>

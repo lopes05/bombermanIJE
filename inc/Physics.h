@@ -16,6 +16,8 @@ class Physics{
 		void operator=(Physics const&) = delete;
 
 		bool checkCollision(SDLGameObject* p1, SDLGameObject* p2);
+		bool checkWallCollision(SDLGameObject* p1, SDLGameObject* p2);
+
 		Vector2D getNormal(SDLGameObject* p1, SDLGameObject* p2);
 
 	private:
