@@ -2,11 +2,13 @@
 #include "Game.h"
 
 DestructibleWall::DestructibleWall(){
-	Game::Instance().addDestructibleWall(this);
+	
+	
 }
 
 void DestructibleWall::update(){
-	
+	m_textureID = "destWall";
+	SDLGameObject::update();
 }
 
 void DestructibleWall::draw(){

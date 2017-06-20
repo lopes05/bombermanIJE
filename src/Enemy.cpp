@@ -13,6 +13,8 @@ Enemy::Enemy() : SDLGameObject(){
 	m_actualHealth = m_totalHealth;
 	m_state = FULL;
 	Game::Instance().setPlayer2(this);
+	TextureManager::Instance().load("assets/destWall.png", "destWall", 
+		Game::Instance().getRenderer());
 }
 
 void Enemy::load(const LoaderParams* pParams){
@@ -86,6 +88,13 @@ void Enemy::move(){
 	m_velocity = movement;
 	
 	for(auto &x: Game::Instance().getGameObjs())
+		if(Physics::Instance().checkWallCollision(dynamic_cast<SDLGameObject*>(this),
+			dynamic_cast<SDLGameObject*>(x))){
+			m_velocity = Physics::Instance().getNormal(dynamic_cast<SDLGameObject*>(this),
+					dynamic_cast<SDLGameObject*>(x));
+		}
+
+	for(auto &x: Game::Instance().getDestructibleWalls())
 		if(Physics::Instance().checkWallCollision(dynamic_cast<SDLGameObject*>(this),
 			dynamic_cast<SDLGameObject*>(x))){
 			m_velocity = Physics::Instance().getNormal(dynamic_cast<SDLGameObject*>(this),

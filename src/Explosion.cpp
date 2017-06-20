@@ -54,9 +54,14 @@ void Explosion::update(){
 			Game::Instance().getStateMachine()->currentState()->removeGameObject(this);
 		}
 
-	
 
-
+	for(auto &x: Game::Instance().getDestructibleWalls())
+		if(Physics::Instance().checkCollision(dynamic_cast<SDLGameObject*>(this),
+			dynamic_cast<SDLGameObject*>(x))){
+			Game::Instance().removeDestructibleWall(x);
+			Game::Instance().getStateMachine()->currentState()->removeGameObject(this);
+			cout << "Removed a destructible wall" << endl;
+		}
 
 }
 

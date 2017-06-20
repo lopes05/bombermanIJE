@@ -103,6 +103,13 @@ void Player::move(){
 					dynamic_cast<SDLGameObject*>(x));
 		}
 
+	for(auto &x: Game::Instance().getDestructibleWalls())
+		if(Physics::Instance().checkWallCollision(dynamic_cast<SDLGameObject*>(this),
+			dynamic_cast<SDLGameObject*>(x))){
+			m_velocity = Physics::Instance().getNormal(dynamic_cast<SDLGameObject*>(this),
+					dynamic_cast<SDLGameObject*>(x));
+		}
+
 	m_velocity = m_velocity.norm();
 	m_position += m_velocity;
 

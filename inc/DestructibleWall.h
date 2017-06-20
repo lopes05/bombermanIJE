@@ -3,7 +3,9 @@
 
 #include "ColliderWall.h"
 #include "BaseCreator.h"
+#include "iostream"
 
+using namespace std;
 class DestructibleWall : public ColliderWall{
 
 public:
@@ -19,9 +21,10 @@ public:
 
 class DestructibleWallCreator : public BaseCreator{
 	GameObject* createGameObject() const{
-		ColliderWall* wall = new ColliderWall();
-
-		Game::Instance().addGameObject(wall);		
+		DestructibleWall* wall = new DestructibleWall();
+	
+		Game::Instance().addDestructibleWall(wall);	
+		
 		return wall;
 	}
 };
