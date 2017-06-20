@@ -114,6 +114,9 @@ void Game::handleEvents(){
 void Game::clean(){
 	cout << "Cleaning game" << endl;
 
+	Game::Instance().getGameObjs().clear();
+	Game::Instance().getDestructibleWalls().clear();
+
 	SDL_DestroyWindow(m_pWindow);
 	SDL_DestroyRenderer(m_pRenderer);
 

@@ -1,4 +1,4 @@
-# RGBender
+# Cópia do Bomberman
 
 ## Tutorial para executar o jogo
 
@@ -6,84 +6,47 @@
 
 * Digite make
 
-* Digite bin/main
+* Digite make run
 
 
 ## Resumo
 
-Protagonista viaja no tempo após pichar um símbolo e vai parar na renascença. Ele decide entrar para à história do mundo da arte como um grande pichador.
+O jogo tenta representar uma partida de bomberman com 2 players.
 
 ## Gameplay
 
-Teclado: WASD + MOUSE + 1 2 3
+Teclado: 
 
-Controle: À Definir
+Player 1:
 
-## Poderes
+* W - Anda para cima
 
-O personagem ataca utilizando de tintas, essas que podem ser combinadas como mostradas na figura abaixo:
+* A - Anda para esquerda
 
-![Combinação de cores](http://i.imgur.com/DgjUGaQ.png)
+* S - Anda para baixo
 
-## Cenário
+* D - Anda para direita
 
-Itália Renascentista + Pós-Moderno 
-
-
-## Organização de elementos do jogo
-
-Vida estilo Zelda (corações)
-
-Área comum: sala de treinamento, mapa simples de navegação entre boss e cutscenes; há um training dummy para testar habilidades
-
-## Bosses
-
-### 1º Boss: Xuxa Freira
-
-Mecânicas:
-
-	Survival DPS Range
-
-	Padronizada
-
-	100% de vida = Cantoria, canta e crianças em correm em volta dela, servindo como escudo, fica invencível. Quando termina de cantar, à “nuvem” de criança dispersa
-
-	50% de vida = Senta lá Claudia, começa a jogar os bancos da paróquia no jogador
-
-	25% de vida = enrage, berserk, joga criança no jogador
-
-Ao morrer, dropa a tinta azul
-
-### 2º Boss:  Davi, Estátua de Michelangelo, O cara mais bonito da cidade
-
-Mecânicas:
-
-	Lento
-
-	100%: Pular + ataque = area de dano, se cura (pode ser interrompido)
-
-	50%: Disassemble e ganha alcance (arranca um braço para bater em você)
-
-	25%: Enrage (braço bumerangue)
-
-Ao morrer dropa a tinta vermelha
-
-### 3º Boss: Seu rival do futuro
-
-Detalhes da batalha:
-
-	Batalha no topo de um prédio
-
-	Quebra 4ª parede (desliga tela, picha tela, picha mais rápido, etc.)
-
-	Poder igual ao jogador, porém + refinado
+* X - Planta Bomba
 
 
+Player 2:
+
+* Up arrow - Anda para cima
+
+* Left Arrow - Anda para esquerda
+
+* Down Arrow - Anda para baixo
+
+* Right Arrow - Anda para direita
+
+* L - Planta Bomba
 
 
+## Detalhes da Batalha
 
+Ganha aquele jogador que ficar vivo até que algum dos dois pereça.
+	
+Existem obstáculos que as bombas destroem, e obstaculos que as bombas não conseguem destruir.
 
-
-
-
-
+Não há itens para bonificar os ataques.

@@ -16,6 +16,13 @@ public:
 	virtual void update();
 	virtual void draw();
 
+	void setVisible(bool value){
+		is_Visible = value;
+	}
+
+private:
+	bool is_Visible;
+
 };
 
 
@@ -24,7 +31,7 @@ class DestructibleWallCreator : public BaseCreator{
 		DestructibleWall* wall = new DestructibleWall();
 	
 		Game::Instance().addDestructibleWall(wall);	
-		
+
 		return wall;
 	}
 };

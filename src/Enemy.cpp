@@ -15,6 +15,10 @@ Enemy::Enemy() : SDLGameObject(){
 	Game::Instance().setPlayer2(this);
 	TextureManager::Instance().load("assets/destWall.png", "destWall", 
 		Game::Instance().getRenderer());
+	TextureManager::Instance().load("assets/bomber2side.png", "bomber2side", 
+		Game::Instance().getRenderer());
+	TextureManager::Instance().load("assets/bomber2up.png", "bomber2up", 
+		Game::Instance().getRenderer());
 }
 
 void Enemy::load(const LoaderParams* pParams){
@@ -65,21 +69,21 @@ void Enemy::move(){
 
 	if(movement.getY() == 0){
 		if(movement.getX() > 0){
-			m_textureID = "bside";
+			m_textureID = "bomber2side";
 		}
 		else if(movement.getX()< 0){
-			m_textureID = "bside";
+			m_textureID = "bomber2side";
 		}
 		else{
-			m_textureID = "helicopter";
+			m_textureID = "bomber2";
 		}
 	}
 	else{
 		if(movement.getY() > 0){
-			m_textureID = "helicopter";
+			m_textureID = "bomber2";
 		}
 		else{
-			m_textureID = "bup";
+			m_textureID = "bomber2up";
 		}
 	}
 

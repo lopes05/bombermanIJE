@@ -26,6 +26,10 @@ public:
 		return m_position;
 	}
 
+	Vector2D& getVelocity(){
+		return m_velocity;
+	}
+
 	int getWidth(){
 		return m_width;
 	}

@@ -13,6 +13,7 @@ using namespace std;
 
 Player::Player() : SDLGameObject(){
 	//TextureManager::Instance().load("assets/clash2.png", "bullet", Game::Instance().getRenderer());
+	TextureManager::Instance().load("assets/destWall.png", "dstWall", Game::Instance().getRenderer());
 	TextureManager::Instance().load("assets/bombas.png", "bomba", Game::Instance().getRenderer());
 	TextureManager::Instance().load("assets/explosion.png", "exp", Game::Instance().getRenderer());
 	TextureManager::Instance().load("assets/bombermanup.png", "bup", Game::Instance().getRenderer());
@@ -101,6 +102,7 @@ void Player::move(){
 			dynamic_cast<SDLGameObject*>(x))){
 			m_velocity = Physics::Instance().getNormal(dynamic_cast<SDLGameObject*>(this),
 					dynamic_cast<SDLGameObject*>(x));
+			
 		}
 
 	for(auto &x: Game::Instance().getDestructibleWalls())

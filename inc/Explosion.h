@@ -18,6 +18,9 @@ public:
 private:
 	Uint32 time_to_live;
 	Uint32 bornTime;
+
+	void removeExplosionFixedWall();
+	void removeDestructibleWall();
 };
 
 class ExplosionCreator{

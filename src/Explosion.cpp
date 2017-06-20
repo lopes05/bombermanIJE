@@ -5,6 +5,7 @@
 #include "Physics.h"
 #include "GameOverState.h"
 #include <unistd.h>
+#include "DestructibleWall.h"
 
 using namespace std;
 
@@ -36,33 +37,41 @@ void Explosion::update(){
 		}
 	}
 
-	if(Physics::Instance().checkCollision(dynamic_cast<SDLGameObject*>(this), 
+	if(Physics::Instance().checkWallCollision(dynamic_cast<SDLGameObject*>(this), 
 		dynamic_cast<SDLGameObject*>(Game::Instance().getPlayer()))){
 		cout << "GG! PLAYER 2 WINS" << endl;
 		Game::Instance().getStateMachine()->changeState(new GameOverState());
 	}
 
-	if(Physics::Instance().checkCollision(dynamic_cast<SDLGameObject*>(this), 
+	if(Physics::Instance().checkWallCollision(dynamic_cast<SDLGameObject*>(this), 
 		dynamic_cast<SDLGameObject*>(Game::Instance().getPlayer2()))){
 		cout << "GG! PLAYER 1 WINS" << endl;
 		Game::Instance().getStateMachine()->changeState(new GameOverState());
 	}
 
+	removeExplosionFixedWall();
+	removeDestructibleWall();
+
+
+}
+
+void Explosion::removeExplosionFixedWall(){
 	for(auto &x: Game::Instance().getGameObjs())
 		if(Physics::Instance().checkWallCollision(dynamic_cast<SDLGameObject*>(this),
 			dynamic_cast<SDLGameObject*>(x))){
 			Game::Instance().getStateMachine()->currentState()->removeGameObject(this);
 		}
+}
 
-
+void Explosion::removeDestructibleWall(){
 	for(auto &x: Game::Instance().getDestructibleWalls())
 		if(Physics::Instance().checkCollision(dynamic_cast<SDLGameObject*>(this),
 			dynamic_cast<SDLGameObject*>(x))){
 			Game::Instance().removeDestructibleWall(x);
 			Game::Instance().getStateMachine()->currentState()->removeGameObject(this);
 			cout << "Removed a destructible wall" << endl;
+			dynamic_cast<DestructibleWall*>(x)->setVisible(false);
 		}
-
 }
 
 void Explosion::draw(){

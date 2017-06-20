@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="2017.05.02" orientation="orthogonal" renderorder="right-down" width="18" height="16" tilewidth="32" tileheight="32" nextobjectid="123">
+<map version="2017.05.02" orientation="orthogonal" renderorder="right-down" width="18" height="16" tilewidth="32" tileheight="32" nextobjectid="127">
  <properties>
-  <property name="destWall" value="assets/destWall.png"/>
+  <property name="bomber2" value="assets/bomber2.png"/>
+  <property name="dest" value="assets/wall.png"/>
   <property name="helicopter" value="assets/bomberman.png"/>
   <property name="wall" value="assets/wall.png"/>
  </properties>
@@ -10,7 +11,7 @@
  </tileset>
  <layer name="Tile Layer 1" width="18" height="16">
   <data encoding="base64" compression="zlib">
-   eJxbz8DAsJ5KuIBCTEtzsJlLSM1Q8Ndo+Awtc4ZTOFMDAwA8U4/4
+   eJxbz8DAsJ5KuIBCTEtzsJlLSM1Q8Ndo+JDur8HmHlqFM63jixoYAMsPkHY=
   </data>
  </layer>
  <objectgroup name="Object Layer 1">
@@ -20,14 +21,6 @@
     <property name="textureHeight" value="512"/>
     <property name="textureID" value="x"/>
     <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="2" name="player1" type="Player" x="34" y="34" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="3"/>
-    <property name="textureHeight" value="36"/>
-    <property name="textureID" value="helicopter"/>
-    <property name="textureWidth" value="20.333"/>
    </properties>
   </object>
   <object id="5" name="wall2" type="ColliderWall" x="30" y="0" width="545" height="32">
@@ -54,7 +47,7 @@
     <property name="textureWidth" value="32"/>
    </properties>
   </object>
-  <object id="8" name="obstacle1" type="ColliderWall" x="129.5" y="96.5" width="29" height="27">
+  <object id="8" name="obstacle1" type="ColliderWall" x="129.5" y="96" width="29" height="27">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="32"/>
@@ -62,7 +55,7 @@
     <property name="textureWidth" value="32"/>
    </properties>
   </object>
-  <object id="41" name="obstacle1" type="ColliderWall" x="128.5" y="226.5" width="29" height="27">
+  <object id="41" name="obstacle1" type="ColliderWall" x="128.5" y="224" width="29" height="27">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="32"/>
@@ -70,7 +63,7 @@
     <property name="textureWidth" value="32"/>
    </properties>
   </object>
-  <object id="44" name="obstacle1" type="ColliderWall" x="129.5" y="386.5" width="29" height="27">
+  <object id="44" name="obstacle1" type="ColliderWall" x="129.5" y="384" width="29" height="27">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="32"/>
@@ -78,7 +71,585 @@
     <property name="textureWidth" value="32"/>
    </properties>
   </object>
-  <object id="45" name="player2" type="Enemy" x="479.5" y="416.5" width="29" height="27">
+  <object id="46" name="obstacle1" type="ColliderWall" x="290.5" y="224" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="47" name="obstacle1" type="ColliderWall" x="289.5" y="96" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="48" name="obstacle1" type="ColliderWall" x="416.5" y="96" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="49" name="obstacle1" type="ColliderWall" x="417.5" y="224" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="50" name="obstacle1" type="ColliderWall" x="418.5" y="384" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="51" name="obstacle1" type="ColliderWall" x="289.5" y="384" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="3"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="58" name="destWall" type="DestructibleWall" x="99.5" y="32" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="60" name="destWall" type="DestructibleWall" x="162.5" y="96" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="61" name="destWall" type="DestructibleWall" x="195.5" y="96" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="62" name="destWall" type="DestructibleWall" x="227.5" y="96" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="63" name="destWall" type="DestructibleWall" x="97.5" y="96" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="64" name="destWall" type="DestructibleWall" x="66.5" y="128" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="65" name="destWall" type="DestructibleWall" x="67.5" y="96" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="66" name="destWall" type="DestructibleWall" x="32.5" y="128" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="67" name="destWall" type="DestructibleWall" x="65.5" y="160" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="68" name="destWall" type="DestructibleWall" x="33.5" y="160" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="69" name="destWall" type="DestructibleWall" x="98.5" y="128" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="70" name="destWall" type="DestructibleWall" x="133.5" y="32" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="71" name="destWall" type="DestructibleWall" x="256.5" y="32" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="72" name="destWall" type="DestructibleWall" x="289.5" y="32" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="73" name="destWall" type="DestructibleWall" x="289.5" y="64" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="74" name="destWall" type="DestructibleWall" x="321.5" y="96" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="75" name="destWall" type="DestructibleWall" x="322.5" y="64" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="76" name="destWall" type="DestructibleWall" x="515.5" y="448" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="77" name="destWall" type="DestructibleWall" x="514.5" y="416" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="78" name="destWall" type="DestructibleWall" x="481.5" y="448" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="79" name="destWall" type="DestructibleWall" x="514.5" y="384" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="80" name="destWall" type="DestructibleWall" x="419.5" y="320" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="81" name="destWall" type="DestructibleWall" x="486.5" y="320" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="82" name="destWall" type="DestructibleWall" x="451.5" y="320" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="83" name="destWall" type="DestructibleWall" x="193.5" y="192" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="84" name="destWall" type="DestructibleWall" x="225.5" y="192" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="85" name="destWall" type="DestructibleWall" x="226.5" y="224" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="86" name="destWall" type="DestructibleWall" x="226.5" y="256" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="87" name="destWall" type="DestructibleWall" x="194.5" y="288" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="88" name="destWall" type="DestructibleWall" x="193.5" y="320" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="89" name="destWall" type="DestructibleWall" x="132.5" y="288" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="90" name="destWall" type="DestructibleWall" x="67.5" y="256" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="91" name="destWall" type="DestructibleWall" x="33.5" y="288" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="92" name="destWall" type="DestructibleWall" x="32.5" y="224" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="93" name="destWall" type="DestructibleWall" x="33.5" y="320" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="94" name="destWall" type="DestructibleWall" x="34.5" y="352" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="95" name="destWall" type="DestructibleWall" x="65.5" y="384" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="96" name="destWall" type="DestructibleWall" x="98.5" y="416" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="97" name="destWall" type="DestructibleWall" x="132.5" y="448" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="98" name="destWall" type="DestructibleWall" x="197.5" y="448" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="99" name="destWall" type="DestructibleWall" x="164.5" y="448" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="100" name="destWall" type="DestructibleWall" x="289.5" y="352" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="101" name="destWall" type="DestructibleWall" x="196.5" y="416" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="102" name="destWall" type="DestructibleWall" x="322.5" y="352" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="103" name="destWall" type="DestructibleWall" x="354.5" y="384" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="104" name="destWall" type="DestructibleWall" x="386.5" y="384" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="105" name="destWall" type="DestructibleWall" x="321.5" y="448" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="106" name="destWall" type="DestructibleWall" x="288.5" y="416" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="107" name="destWall" type="DestructibleWall" x="352.5" y="448" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="108" name="destWall" type="DestructibleWall" x="230.5" y="352" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="109" name="destWall" type="DestructibleWall" x="323.5" y="256" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="110" name="destWall" type="DestructibleWall" x="273.5" y="288" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="111" name="destWall" type="DestructibleWall" x="354.5" y="192" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="113" name="destWall1" type="DestructibleWall" x="481.5" y="32" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="114" name="destWall" type="DestructibleWall" x="481.5" y="64" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="115" name="destWall" type="DestructibleWall" x="481.5" y="96" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="116" name="destWall" type="DestructibleWall" x="512.5" y="64" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="117" name="destWall" type="DestructibleWall" x="513.5" y="128" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="119" name="destWall" type="DestructibleWall" x="483.5" y="160" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="120" name="destWall" type="DestructibleWall" x="482.5" y="224" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="121" name="destWall" type="DestructibleWall" x="513.5" y="256" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="122" name="destWall" type="DestructibleWall" x="420.5" y="256" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="123" name="destWall" type="DestructibleWall" x="352.5" y="288" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="124" name="destWall" type="DestructibleWall" x="384.5" y="288" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="125" name="obstacle1" type="ColliderWall" x="418.5" y="416" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="126" name="obstacle1" type="ColliderWall" x="132.5" y="320" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="wall"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Object Layer 2">
+  <object id="2" name="player1" type="Player" x="34" y="34" width="29" height="27">
    <properties>
     <property name="numFrames" value="3"/>
     <property name="textureHeight" value="36"/>
@@ -86,548 +657,12 @@
     <property name="textureWidth" value="20.333"/>
    </properties>
   </object>
-  <object id="46" name="obstacle1" type="ColliderWall" x="290.5" y="227.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="wall"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="47" name="obstacle1" type="ColliderWall" x="289.5" y="97.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="wall"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="48" name="obstacle1" type="ColliderWall" x="416.5" y="96.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="wall"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="49" name="obstacle1" type="ColliderWall" x="417.5" y="226.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="wall"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="50" name="obstacle1" type="ColliderWall" x="418.5" y="385.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="wall"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="51" name="obstacle1" type="ColliderWall" x="289.5" y="385.5" width="29" height="27">
+  <object id="45" name="player2" type="Enemy" x="479.5" y="416" width="29" height="27">
    <properties>
     <property name="numFrames" value="3"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="wall"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="58" name="destWall" type="DestructibleWall" x="99.5" y="35.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="60" name="destWall" type="DestructibleWall" x="162.5" y="98.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="61" name="destWall" type="DestructibleWall" x="195.5" y="98.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="62" name="destWall" type="DestructibleWall" x="227.5" y="98.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="63" name="destWall" type="DestructibleWall" x="97.5" y="96.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="64" name="destWall" type="DestructibleWall" x="66.5" y="128.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="65" name="destWall" type="DestructibleWall" x="67.5" y="95.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="66" name="destWall" type="DestructibleWall" x="32.5" y="130.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="67" name="destWall" type="DestructibleWall" x="65.5" y="158.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="68" name="destWall" type="DestructibleWall" x="33.5" y="158.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="69" name="destWall" type="DestructibleWall" x="98.5" y="127.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="70" name="destWall" type="DestructibleWall" x="133.5" y="35.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="71" name="destWall" type="DestructibleWall" x="256.5" y="34.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="72" name="destWall" type="DestructibleWall" x="289.5" y="33.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="73" name="destWall" type="DestructibleWall" x="289.5" y="63.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="74" name="destWall" type="DestructibleWall" x="321.5" y="96.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="75" name="destWall" type="DestructibleWall" x="322.5" y="63.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="76" name="destWall" type="DestructibleWall" x="515.5" y="448.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="77" name="destWall" type="DestructibleWall" x="514.5" y="415.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="78" name="destWall" type="DestructibleWall" x="481.5" y="448.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="79" name="destWall" type="DestructibleWall" x="514.5" y="385.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="80" name="destWall" type="DestructibleWall" x="419.5" y="335.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="81" name="destWall" type="DestructibleWall" x="486.5" y="334.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="82" name="destWall" type="DestructibleWall" x="451.5" y="334.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="83" name="destWall" type="DestructibleWall" x="193.5" y="194.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="84" name="destWall" type="DestructibleWall" x="225.5" y="193.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="85" name="destWall" type="DestructibleWall" x="226.5" y="224.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="86" name="destWall" type="DestructibleWall" x="226.5" y="256.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="87" name="destWall" type="DestructibleWall" x="194.5" y="289.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="88" name="destWall" type="DestructibleWall" x="193.5" y="319.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="89" name="destWall" type="DestructibleWall" x="132.5" y="291.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="90" name="destWall" type="DestructibleWall" x="67.5" y="259.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="91" name="destWall" type="DestructibleWall" x="33.5" y="288.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="92" name="destWall" type="DestructibleWall" x="32.5" y="224.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="93" name="destWall" type="DestructibleWall" x="33.5" y="320.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="94" name="destWall" type="DestructibleWall" x="34.5" y="352.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="95" name="destWall" type="DestructibleWall" x="65.5" y="386.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="96" name="destWall" type="DestructibleWall" x="98.5" y="414.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="97" name="destWall" type="DestructibleWall" x="132.5" y="448.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="98" name="destWall" type="DestructibleWall" x="197.5" y="449.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="99" name="destWall" type="DestructibleWall" x="164.5" y="448.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="100" name="destWall" type="DestructibleWall" x="289.5" y="355.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="101" name="destWall" type="DestructibleWall" x="196.5" y="418.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="102" name="destWall" type="DestructibleWall" x="322.5" y="355.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="103" name="destWall" type="DestructibleWall" x="354.5" y="384.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="104" name="destWall" type="DestructibleWall" x="386.5" y="383.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="105" name="destWall" type="DestructibleWall" x="321.5" y="449.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="106" name="destWall" type="DestructibleWall" x="288.5" y="417.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="107" name="destWall" type="DestructibleWall" x="352.5" y="449.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="108" name="destWall" type="DestructibleWall" x="230.5" y="355.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="109" name="destWall" type="DestructibleWall" x="323.5" y="257.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="110" name="destWall" type="DestructibleWall" x="273.5" y="289.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="111" name="destWall" type="DestructibleWall" x="354.5" y="194.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="113" name="destWall" type="DestructibleWall" x="481.5" y="36.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="114" name="destWall" type="DestructibleWall" x="481.5" y="64.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="115" name="destWall" type="DestructibleWall" x="481.5" y="96.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="116" name="destWall" type="DestructibleWall" x="512.5" y="66.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="117" name="destWall" type="DestructibleWall" x="513.5" y="130.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="119" name="destWall" type="DestructibleWall" x="483.5" y="160.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="120" name="destWall" type="DestructibleWall" x="482.5" y="227.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="121" name="destWall" type="DestructibleWall" x="513.5" y="257.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
-   </properties>
-  </object>
-  <object id="122" name="destWall" type="DestructibleWall" x="420.5" y="256.5" width="29" height="27">
-   <properties>
-    <property name="numFrames" value="1"/>
-    <property name="textureHeight" value="32"/>
-    <property name="textureID" value="dest"/>
-    <property name="textureWidth" value="32"/>
+    <property name="textureHeight" value="36"/>
+    <property name="textureID" value="bomber2"/>
+    <property name="textureWidth" value="20.333"/>
    </properties>
   </object>
  </objectgroup>

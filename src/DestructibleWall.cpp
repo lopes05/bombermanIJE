@@ -2,17 +2,17 @@
 #include "Game.h"
 
 DestructibleWall::DestructibleWall(){
-	
-	
+	is_Visible = true;
 }
 
 void DestructibleWall::update(){
-	m_textureID = "destWall";
-	SDLGameObject::update();
+	m_textureID = "dstWall";
 }
 
 void DestructibleWall::draw(){
-	SDLGameObject::draw();
+	if(is_Visible){
+		SDLGameObject::draw();
+	}
 }
 
 void DestructibleWall::clean(){

@@ -40,7 +40,7 @@ bool Physics::checkWallCollision(SDLGameObject* p1, SDLGameObject* p2){
 	topB = p2->getPosition().getY();
 	bottomB = p2->getPosition().getY() + p2->getHeight() - 10;
 
-	if(bottomA <= topB) return false;
+	if(bottomA < topB) return false;
 	if(topA >= bottomB) return false;
 	if(rightA <= leftB) return false;
 	if(leftA >= rightB) return false;
@@ -49,6 +49,8 @@ bool Physics::checkWallCollision(SDLGameObject* p1, SDLGameObject* p2){
 }
 
 Vector2D Physics::getNormal(SDLGameObject* p1, SDLGameObject* p2){
+	
+
 	Vector2D res = p1->getPosition() - p2->getPosition();
 	
 	return res.norm();
