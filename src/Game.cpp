@@ -15,6 +15,7 @@
 #include <vector>
 #include "DestructibleWall.h"
 #include <SDL2/SDL_image.h>
+#include "BombUpgrader.h"
 
 using namespace std;
 
@@ -75,6 +76,8 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	GameObjectFactory::Instance().registerType("AnimatedGraphic", new AnimatedGraphicCreator());
 	GameObjectFactory::Instance().registerType("ColliderWall", new ColliderWallCreator());
 	GameObjectFactory::Instance().registerType("DestructibleWall", new DestructibleWallCreator());
+	GameObjectFactory::Instance().registerType("BombUpgrader", new BombUpgraderCreator());
+
 
 	m_pGameStateMachine = new GameStateMachine();
 	m_pGameStateMachine->changeState(new MainMenuState());

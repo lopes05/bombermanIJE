@@ -73,6 +73,10 @@ bool PlayState::onExit(){
 		Game::Instance().getStateMachine()->currentState()->removeGameObject(gameObj);
 	}
 
+	for(auto gameObj : m_upgraders){
+		Game::Instance().getStateMachine()->currentState()->removeGameObject(gameObj);
+	}
+
 	cout << "Exiting PlayState" << endl;	
 	return true;
 }

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="2017.05.02" orientation="orthogonal" renderorder="right-down" width="18" height="16" tilewidth="32" tileheight="32" nextobjectid="129">
+<map version="2017.05.02" orientation="orthogonal" renderorder="right-down" width="18" height="16" tilewidth="32" tileheight="32" nextobjectid="131">
  <properties>
   <property name="bomber2" value="assets/bomber2.png"/>
+  <property name="bombupgrader" value="assets/upgrader.png"/>
   <property name="dest" value="assets/wall.png"/>
   <property name="helicopter" value="assets/bomberman.png"/>
   <property name="wall" value="assets/wall.png"/>
@@ -14,6 +15,24 @@
    eJxbz8DAsJ5KuIBCTEtzsJlLSM1Q8Ndo+JDur8HmHlqFM63jixoYAMsPkHY=
   </data>
  </layer>
+ <objectgroup name="Object Layer 3">
+  <object id="129" name="bonus" type="BombUpgrader" x="322.5" y="64.5" width="28" height="28">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="28"/>
+    <property name="textureID" value="bombupgrader"/>
+    <property name="textureWidth" value="28"/>
+   </properties>
+  </object>
+  <object id="130" name="bonus" type="BombUpgrader" x="198" y="448" width="28" height="28">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="28"/>
+    <property name="textureID" value="bombupgrader"/>
+    <property name="textureWidth" value="28"/>
+   </properties>
+  </object>
+ </objectgroup>
  <objectgroup name="Object Layer 1">
   <object id="1" name="wall1" type="ColliderWall" x="0" y="0" width="32" height="512">
    <properties>

@@ -20,6 +20,16 @@ public:
 	void useSkill();
 	void move();
 
+	int getBonus(){
+		return m_bonus;
+	}
+
+	void setBonus(int x){
+		m_bonus = x;
+	}
+
+	void increaseExplosionSize();
+
 private:
 	enum BossHealth{
 		FULL = 1,
@@ -31,6 +41,7 @@ private:
 	int m_totalHealth;
 	int m_actualHealth;
 	int m_state;
+	int m_bonus;
 	BombPlayer2Creator bCreator;
 };
 

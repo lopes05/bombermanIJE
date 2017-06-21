@@ -31,16 +31,19 @@ void BombPlayer2::update(){
 			Game::Instance().getStateMachine()->currentState()->removePlayer2Bomb(this);
 			
 			cout << "Bomba explodiu" << endl;
-			int x = -21*4;
-			int y = -25 * 4;
-			for(int i = 0; i < 9; i++){
+			
+			int size = 9 * Game::Instance().getPlayer2()->getBonus();
+			int x = -21* size / 2;
+			int y = -25 * size / 2;
+			
+			for(int i = 0; i < size; i++){
 				Explosion *exp1 = explosionCreator.create(this->getPosition().getX() + x, 
 					this->getPosition().getY());
 				x+=21;
 			}
 			
 
-			for(int i = 0; i < 9; i++){
+			for(int i = 0; i < size; i++){
 				Explosion *exp1 = explosionCreator.create(this->getPosition().getX(), 
 					this->getPosition().getY() + y);
 				y+=21;

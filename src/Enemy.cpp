@@ -5,10 +5,12 @@
 #include <iostream>
 #include <string>
 #include "Physics.h"
+#include "BombUpgrader.h"
 
 using namespace std;
 
 Enemy::Enemy() : SDLGameObject(){
+	setBonus(1);
 	m_totalHealth = 1000;
 	m_actualHealth = m_totalHealth;
 	m_state = FULL;
@@ -39,6 +41,8 @@ void Enemy::update(){
 		m_currentFrame = 0;
 	}
 
+
+	increaseExplosionSize();
 	SDLGameObject::update();
 
 }
@@ -124,4 +128,15 @@ void Enemy::useSkill(){
 		Game::Instance().getStateMachine()->currentState()->addPlayer2Bomb(bomb);
 		cout << "Bomba criada" << endl;
 	}
+}
+
+void Enemy::increaseExplosionSize(){
+	for(auto &x: Game::Instance().getStateMachine()->currentState()->getUpgraders())
+		if(Physics::Instance().checkWallCollision(dynamic_cast<SDLGameObject*>(this),
+			dynamic_cast<SDLGameObject*>(x))){
+			setBonus(getBonus() + 1);
+			dynamic_cast<BombUpgrader*>(x)->setVisible(false);
+			Game::Instance().getStateMachine()->currentState()->removeUpgrader(x);
+			cout << "Player 2 got an item." << endl;
+		}
 }

@@ -41,6 +41,17 @@ public:
 		}
 	}
 
+	void addUpgrader(GameObject* gameObject){
+		m_upgraders.push_back(gameObject);
+	}
+
+	void removeUpgrader(GameObject* gameObject){
+		std::vector<GameObject*>::iterator position = std::find(m_upgraders.begin(), m_upgraders.end(), gameObject);
+		if(position != m_upgraders.end()){
+			m_upgraders.erase(position);
+		}
+	}
+
 
 	GameObject* getTail(){
 		return m_gameObjects.back();
@@ -54,10 +65,17 @@ public:
 		return m_BombsPlayer2;
 	}
 
+	std::vector<GameObject*> getUpgraders(){
+		return m_upgraders;
+	}
+
+
 	bool can_update = true;
 protected:
 	std::vector<GameObject*> m_gameObjects;
 	std::vector<GameObject*> m_BombsPlayer2;
+	std::vector<GameObject*> m_upgraders;
+
 	std::vector<GameObject*> m_tiles;
 	std::vector<std::string> m_textureIDList;
 	

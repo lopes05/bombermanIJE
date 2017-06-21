@@ -20,11 +20,24 @@ public:
 	void clean();
 	typedef uint8_t*(*Callback) ();
 	uint8_t* pixelColors;
+
+
+	int getBonus(){
+		return m_bonus;
+	}
+
+	void setBonus(int x){
+		m_bonus = x;
+	}
+
+	void increaseExplosionSize();
+	
 private:
 	void handleInput();
 	bool isFirstSkill = true;
 	void move();
 	void useSkill();
+	int m_bonus;
 	BombCreator bCreator;
 };
 
