@@ -12,6 +12,8 @@
 
 #include <iostream>
 
+
+using namespace std;
 const std::string GameOverState::s_gameOverID = "GAMEOVER";
 
 void GameOverState::update(){

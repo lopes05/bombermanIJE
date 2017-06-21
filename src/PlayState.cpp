@@ -65,6 +65,14 @@ bool PlayState::onExit(){
 
 	TextureManager::Instance().clearFromTextureMap("helicopter");
 
+	for(auto gameObj : m_gameObjects){
+		Game::Instance().getStateMachine()->currentState()->removeGameObject(gameObj);
+	}
+
+	for(auto gameObj : m_BombsPlayer2){
+		Game::Instance().getStateMachine()->currentState()->removeGameObject(gameObj);
+	}
+
 	cout << "Exiting PlayState" << endl;	
 	return true;
 }

@@ -19,6 +19,10 @@ Enemy::Enemy() : SDLGameObject(){
 		Game::Instance().getRenderer());
 	TextureManager::Instance().load("assets/bomber2up.png", "bomber2up", 
 		Game::Instance().getRenderer());
+
+	TextureManager::Instance().load("assets/player1wins.png", "player1wins", 
+		Game::Instance().getRenderer());
+		
 }
 
 void Enemy::load(const LoaderParams* pParams){
@@ -117,7 +121,7 @@ void Enemy::useSkill(){
 		Bomb *bomb = bCreator.create();
 		bomb->load(new LoaderParams(m_position.getX() + 5, m_position.getY() + 5, 21, 25, "bomba",
 			10));
-		Game::Instance().getStateMachine()->currentState()->addGameObject(bomb);
+		Game::Instance().getStateMachine()->currentState()->addPlayer2Bomb(bomb);
 		cout << "Bomba criada" << endl;
 	}
 }

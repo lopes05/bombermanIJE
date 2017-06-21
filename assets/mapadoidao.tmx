@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="2017.05.02" orientation="orthogonal" renderorder="right-down" width="18" height="16" tilewidth="32" tileheight="32" nextobjectid="127">
+<map version="2017.05.02" orientation="orthogonal" renderorder="right-down" width="18" height="16" tilewidth="32" tileheight="32" nextobjectid="129">
  <properties>
   <property name="bomber2" value="assets/bomber2.png"/>
   <property name="dest" value="assets/wall.png"/>
@@ -527,7 +527,7 @@
     <property name="textureWidth" value="32"/>
    </properties>
   </object>
-  <object id="110" name="destWall" type="DestructibleWall" x="273.5" y="288" width="29" height="27">
+  <object id="110" name="destWall" type="DestructibleWall" x="258.5" y="288" width="29" height="27">
    <properties>
     <property name="numFrames" value="1"/>
     <property name="textureHeight" value="32"/>
@@ -647,9 +647,25 @@
     <property name="textureWidth" value="32"/>
    </properties>
   </object>
+  <object id="127" name="destWall" type="DestructibleWall" x="288.5" y="160" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
+  <object id="128" name="destWall" type="DestructibleWall" x="256.5" y="128" width="29" height="27">
+   <properties>
+    <property name="numFrames" value="1"/>
+    <property name="textureHeight" value="32"/>
+    <property name="textureID" value="dest"/>
+    <property name="textureWidth" value="32"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="Object Layer 2">
-  <object id="2" name="player1" type="Player" x="34" y="34" width="29" height="27">
+  <object id="2" name="player1" type="Player" x="40" y="38" width="29" height="27">
    <properties>
     <property name="numFrames" value="3"/>
     <property name="textureHeight" value="36"/>

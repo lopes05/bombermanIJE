@@ -4,7 +4,7 @@
 #include "SDLGameObject.h"
 #include "LoaderParams.h"
 #include "BaseCreator.h"
-#include "Bomb.h"
+#include "BombPlayer2.h"
 #include <string>
 #include <SDL2/SDL.h>
 
@@ -31,7 +31,7 @@ private:
 	int m_totalHealth;
 	int m_actualHealth;
 	int m_state;
-	BombCreator bCreator;
+	BombPlayer2Creator bCreator;
 };
 
 class EnemyCreator : public BaseCreator{

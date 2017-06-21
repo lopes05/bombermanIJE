@@ -50,7 +50,6 @@ bool Physics::checkWallCollision(SDLGameObject* p1, SDLGameObject* p2){
 
 Vector2D Physics::getNormal(SDLGameObject* p1, SDLGameObject* p2){
 	
-
 	Vector2D res = p1->getPosition() - p2->getPosition();
 	
 	return res.norm();

@@ -8,10 +8,18 @@ void GameState::update(){
 	for(auto gameObject : m_gameObjects){
 		gameObject->update();
 	}
+
+	for(auto gameObject : m_BombsPlayer2){
+		gameObject->update();
+	}
 }
 
 void GameState::render(){
 	for(auto gameObject : m_gameObjects){
+		gameObject->draw();
+	}
+
+	for(auto gameObject : m_BombsPlayer2){
 		gameObject->draw();
 	}
 }
@@ -19,6 +27,10 @@ void GameState::render(){
 bool GameState::onExit(){
 	can_update = false;
 	for(auto gameObject : m_gameObjects){
+		gameObject->clean();
+	}
+
+	for(auto gameObject : m_BombsPlayer2){
 		gameObject->clean();
 	}
 	

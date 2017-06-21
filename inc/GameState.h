@@ -30,6 +30,18 @@ public:
 		}
 	}
 
+	void addPlayer2Bomb(GameObject* gameObject){
+		m_BombsPlayer2.push_back(gameObject);
+	}
+
+	void removePlayer2Bomb(GameObject* gameObject){
+		std::vector<GameObject*>::iterator position = std::find(m_BombsPlayer2.begin(), m_BombsPlayer2.end(), gameObject);
+		if(position != m_BombsPlayer2.end()){
+			m_BombsPlayer2.erase(position);
+		}
+	}
+
+
 	GameObject* getTail(){
 		return m_gameObjects.back();
 	}
@@ -38,9 +50,14 @@ public:
 		return m_gameObjects;
 	}
 
+	std::vector<GameObject*> getPlayer2Bombs(){
+		return m_BombsPlayer2;
+	}
+
 	bool can_update = true;
 protected:
 	std::vector<GameObject*> m_gameObjects;
+	std::vector<GameObject*> m_BombsPlayer2;
 	std::vector<GameObject*> m_tiles;
 	std::vector<std::string> m_textureIDList;
 	
