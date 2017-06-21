@@ -1,3 +1,5 @@
+Autor: Gustavo Lopes
+
 # Cópia do Bomberman
 
 ## Tutorial para executar o jogo
@@ -49,4 +51,4 @@ Ganha aquele jogador que ficar vivo até que algum dos dois pereça.
 	
 Existem obstáculos que as bombas destroem, e obstaculos que as bombas não conseguem destruir.
 
-Não há itens para bonificar os ataques.
+Há 2 itens no mapa para aumentar as explosões.
