@@ -49,6 +49,6 @@ Player 2:
 
 Ganha aquele jogador que ficar vivo até que algum dos dois pereça.
 	
-Existem obstáculos que as bombas destroem, e obstaculos que as bombas não conseguem destruir.
+Existem obstáculos que as bombas destroem, e obstáculos que as bombas não conseguem destruir.
 
 Há 2 itens no mapa para aumentar as explosões.
